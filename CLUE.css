@@ -11,3 +11,11 @@ body {
 .downloadBlock h1 {
 	text-align: center;
 }
+
+#TOC {
+	list-style-type: none;
+}
+
+#TOC li {
+	margin: 10px;
+}
