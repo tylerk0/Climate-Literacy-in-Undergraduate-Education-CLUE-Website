@@ -19,3 +19,19 @@ body {
 #TOC li {
 	margin: 10px;
 }
+
+#unit {
+	margin-left: 25px;
+}
+
+.story {
+	margin-bottom: 40px;
+	overflow: auto;
+}
+
+.story img {
+	width: 100px;
+	float: left;
+	margin-right: 20px;
+	object-fit: cover;
+}
