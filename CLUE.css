@@ -332,3 +332,94 @@ hr {
 	margin-right: 20px;
 	object-fit: cover;
 }
+
+/* Unit Pages (Unit 1–6) */
+/* Assessment Page */
+/* Instructor Stories Page */
+/* Student Material Page */
+.mainBlock {
+	max-width: 1100px;
+	margin: 24px auto;
+	padding: 16px;
+}
+
+/* Main header on each unit page */
+.mainBlock header .unit__name {
+	font-size: 28px;
+	color: var(--brand-accent-2);
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Section styling for learning outcomes, downloads, etc. */
+.mainBlock section {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 24px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Section headings */
+.mainBlock section h2 {
+	color: var(--brand-accent);
+	margin-bottom: 12px;
+}
+
+/* Ordered list styling for learning outcomes */
+.mainBlock section ol {
+	padding-left: 20px;
+}
+
+.mainBlock section ol li {
+	margin-bottom: 8px;
+}
+
+/* Download button */
+.mainBlock section a button {
+	background: var(--brand-accent-2);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.15s ease;
+}
+
+/* Download button hover effect */
+.mainBlock section a button:hover {
+	background: var(--brand-accent);
+	transform: translateY(-2px);
+}
+
+/* Highlight the current unit page in navigation */
+.site-nav a.active {
+	color: var(--brand-accent-2);
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* Space between buttons on Student Materials and similar pages */
+.mainBlock section ul li {
+	margin-bottom: 12px; 
+}
+
+/* Standalone buttons in section paragraphs (like Request Answer Key) */
+.mainBlock section p button {
+	background: var(--brand-accent-2);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.15s ease;
+	margin-bottom: 12px; /* adds space below button */
+}
+
+.mainBlock section p button:hover {
+	background: var(--brand-accent);
+	transform: translateY(-2px);
+}
