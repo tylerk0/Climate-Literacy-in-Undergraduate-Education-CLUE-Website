@@ -283,6 +283,10 @@ hr {
 	transform: translateY(-2px);
 }
 
+#module {
+	scroll-margin-top: 100px;
+}
+
 /* Formatting for Unit Cards */
 .units-grid {
 	display: grid;
