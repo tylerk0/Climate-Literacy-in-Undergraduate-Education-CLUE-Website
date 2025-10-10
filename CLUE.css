@@ -427,3 +427,101 @@ hr {
 	background: var(--brand-accent);
 	transform: translateY(-2px);
 }
+
+/* Center the form on the page */
+.contact-container {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f9fafb;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+/* Heading style */
+.contact-container h1 {
+	text-align: center;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+/* Form container */
+#contact-form {
+	background-color: #fff;
+	padding: 30px 40px;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 450px;
+	display: flex;
+ 	flex-direction: column;
+}
+
+/* Label styling */
+#contact-form label {
+	font-weight: 600;
+	color: #444;
+	margin-bottom: 6px;
+	margin-top: 14px;
+}
+
+/* Input, select, textarea styles */
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+	padding: 10px 12px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: 1rem;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Focus effect */
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+	border-color: #4f46e5;
+	box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+	outline: none;
+}
+
+/* Textarea sizing */
+#contact-form textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+
+/* Button styling */
+#contact-form button {
+	background-color: #0077b6;
+	color: white;
+ 	border: none;
+	padding: 12px 20px;
+	margin-top: 20px;
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#contact-form button:hover {
+	background-color: #023e8a;
+	transform: translateY(-1px);
+}
+
+#contact-form button:active {
+	transform: translateY(1px);
+}
+
+/* Status message */
+#status-message {
+	margin-top: 10px;
+	font-size: 0.95rem;
+	color: #16a34a;
+	text-align: center;
+}

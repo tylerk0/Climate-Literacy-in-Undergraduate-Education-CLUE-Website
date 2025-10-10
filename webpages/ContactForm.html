@@ -1,0 +1,93 @@
+<!--
+	AUTHORS:     Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
+	FILE:        ContactForm.html
+	DESCRIPTION: This file contains the html code for the ContactForm webpage.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CLUE: Contact Form</title>
+		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		
+		<!--External CSS Stylesheet-->
+		<link href="../CLUE.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<header class="site-header">
+			<div class="container site-header__inner">
+				<div class="brand">
+					<img class="brand__logo" src="../LogosAndBranding/CLUE%20-%20black.png" alt="CLUE logo">
+					<h1 class="brand__title">Climate Literacy in Undergraduate Education (CLUE)</h1>
+				</div>
+				<nav class="site-nav" aria-label="Primary">
+					<a href="../CLUE.html">Home</a>
+					<a href="../CLUE.html#module">Module Materials</a>
+					<a id="unit" href="unit1.html">Unit 1</a>
+					<a id="unit" href="unit2.html">Unit 2</a>
+					<a id="unit" href="unit3.html">Unit 3</a>
+					<a id="unit" href="unit4.html">Unit 4</a>
+					<a id="unit" href="unit5.html">Unit 5</a>
+					<a id="unit" href="unit6.html">Unit 6</a>
+				</nav>
+			</div>
+		</header>
+
+		<div class="contact-container">
+			<h1>Contact Us</h1>
+
+			<form id="contact-form">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" required>
+
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email" required>
+
+				<label for="status">What best describes you?</label>
+				<select name="status" id="status" required>
+					<option value="">-- Select an option --</option>
+					<option value="Student">Student</option>
+					<option value="Educator">Educator</option>
+					<option value="Researcher">Researcher</option>
+					<option value="Professional">Professional</option>
+					<option value="Other">Other</option>
+				</select>
+
+				<label for="subject">Subject</label>
+				<input type="text" name="subject" id="subject" required>
+
+				<label for="message">Message</label>
+				<textarea name="message" id="message" required></textarea>
+
+				<button type="submit">Send</button>
+				<div id="status-message"></div>
+			</form>
+		</div>
+
+		<script type="text/javascript">
+			(function(){
+				emailjs.init("S0gAoFE1GFAdCoe4-"); // Replace with your EmailJS public key
+			})();
+
+			document.getElementById("contact-form").addEventListener("submit", function(event) {
+				event.preventDefault(); // Prevent form refresh
+
+				const statusMsg = document.getElementById("status-message");
+
+				emailjs.sendForm("service_aoelayf", "template_o9m8ngd", this)
+					.then(() => {
+						statusMsg.style.color = "green";
+						statusMsg.textContent = "✅ Your message has been sent successfully!";
+						this.reset();
+					}, (error) => {
+						statusMsg.style.color = "red";
+						statusMsg.textContent = "❌ Failed to send. Please try again later.";
+						console.error("EmailJS error:", error);
+					});
+			});
+		</script>
+	</body>
+</html>
