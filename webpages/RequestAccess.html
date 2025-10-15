@@ -69,18 +69,19 @@
 
 					<div id="downloads" class="downloads hidden">
 						<h3>Approved Materials</h3>
-						<a href="../LearningOutcomesAndQuestionBank/Question%20Bank.docx" download>Assignment and Data Analysis</a>
+						<a href="../LearningOutcomesAndQuestionBank/Question%20Bank.docx" download>Answer Key</a>
 					</div>
 				</div>
 			</div>
 
 			<!-- EmailJS Library -->
-			<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-			<!-- Initialize EmailJS -->
-			<script>
+			<script type="text/javascript">
 				(function(){
-					emailjs.init("S0gAoFE1GFAdCoe4-"); // EmailJS public key
+					emailjs.init({
+						publicKey: "S0gAoFE1GFAdCoe4-",
+					});
 				})();
 			</script>
 

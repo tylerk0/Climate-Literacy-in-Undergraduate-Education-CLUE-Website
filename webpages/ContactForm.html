@@ -10,7 +10,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>CLUE: Contact Form</title>
-		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 		
 		<!--External CSS Stylesheet-->
 		<link href="../CLUE.css" type="text/css" rel="stylesheet">
@@ -69,7 +69,9 @@
 
 		<script type="text/javascript">
 			(function(){
-				emailjs.init("S0gAoFE1GFAdCoe4-"); // EmailJS public key
+				emailjs.init({
+					publicKey: "S0gAoFE1GFAdCoe4-",
+				});
 			})();
 
 			document.getElementById("contact-form").addEventListener("submit", function(event) {
