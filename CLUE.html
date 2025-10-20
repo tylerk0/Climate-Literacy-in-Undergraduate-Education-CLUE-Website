@@ -1,186 +1,202 @@
 <!--
-	AUTHORS:     Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
-	FILE:        CLUE.html
-	DESCRIPTION: This file contains the HTML code for the CLUE website.
+  AUTHORS:  Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
+  FILE:     CLUE.html
+  PURPOSE:  Main page for the CLUE site
 -->
 
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>CLUE</title> <!--what we see in the browser’s title bar or page tab-->
+  <head>
+    <!-- basic page info -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUE</title>
 
-		<!--External CSS Stylesheet-->
-		<link href="CLUE.css" type="text/css" rel="stylesheet">
-	</head>
+    <!-- link to main stylesheet -->
+    <link href="CLUE.css" type="text/css" rel="stylesheet">
+  </head>
 
-	<body>
-		<header class="site-header">
-			<div class="container site-header__inner">
-				<div class="brand">
-					<img class="brand__logo" src="LogosAndBranding/CLUE%20-%20black.png" alt="CLUE logo">
-					<h1 class="brand__title">Climate Literacy in Undergraduate Education (CLUE)</h1>
-				</div>
-				<nav class="site-nav" aria-label="Primary">
-					<a href="CLUE.html">Home</a>
-					<a href="#module">Module Materials</a>
-					<a id="unit" href="webpages/unit1.html">Unit 1</a>
-					<a id="unit" href="webpages/unit2.html">Unit 2</a>
-					<a id="unit" href="webpages/unit3.html">Unit 3</a>
-					<a id="unit" href="webpages/unit4.html">Unit 4</a>
-					<a id="unit" href="webpages/unit5.html">Unit 5</a>
-					<a id="unit" href="webpages/unit6.html">Unit 6</a>
-				</nav>
-			</div>
-		</header>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <!-- logo and title -->
+        <div class="brand">
+          <img class="brand__logo" src="LogosAndBranding/CLUE%20-%20black.png" alt="CLUE logo">
+          <h1 class="brand__title">Climate Literacy in Undergraduate Education (CLUE)</h1>
+        </div>
 
-		<section class="masthead" aria-label="Intro banner">
-			<div class="container masthead__inner">
-				<div class="brand-row">
-					<div class="badge-list" aria-hidden="true">
-						<div class="badge"></div>
-						<div class="badge"></div>
-						<div class="badge"></div>
-					</div>
-				</div>
-			</div>
-			<div class="banner">
-				<div class="container banner__inner">
-					<div class="module-card">
-						<h2>Climate Literacy in Undergraduate Education</h2>
-						<div class="module-meta">
-							<span><mark><b>(100)</b></mark> / 200 / 300 / 400 : <b>Intro-Level</b></span>
-						</div>
-						<div class="inline-actions">
-							<p>1-2 Weeks / 6 Units</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- navigation bar -->
+        <nav class="site-nav" aria-label="Primary">
+          <a href="CLUE.html">Home</a>
+          <a href="#module">Module Materials</a>
+          <a id="unit" href="webpages/unit1.html">Unit 1</a>
+          <a id="unit" href="webpages/unit2.html">Unit 2</a>
+          <a id="unit" href="webpages/unit3.html">Unit 3</a>
+          <a id="unit" href="webpages/unit4.html">Unit 4</a>
+          <a id="unit" href="webpages/unit5.html">Unit 5</a>
+          <a id="unit" href="webpages/unit6.html">Unit 6</a>
+        </nav>
+      </div>
+    </header>
 
-		<div class="ribbon" aria-hidden="true">
-			<span class="ribbon__label">Summary</span>
-			<div class="content-card" style="margin-bottom: 24px;">
-				<p>Exposure to extreme temperatures and humidity is a significant public health concern to all populations, especially in urban areas, where the urban heat island exacerbates extreme heat and increases heat exposure and heat-related illnesses and death. Traditional ambient weather measurement is obtained through hourly weather stations, such as those at airports. However, fixed-location weather stations do not capture the variability of heat within the microclimates of an urban area and, thus, do not identify more vulnerable populations that need increased resources and mitigation before and during heat events.</p>
-				<p>Students complete an in-depth microclimate curriculum, collect their own heat exposure data, analyze their data and compare their exposure to others in the class, work with fellow students to interpret results, and apply both scientific and sociological concepts to their results. By completing this curriculum, students learn about microclimate conditions actually encountered by college students. Data was collected by students who wore small temperature and humidity pendants suspended from necklaces during a 2-day interval. Instructors are encouraged to reach out to project lead, Dr. Alisa Hass (Alisa.Hass@mtsu.edu), to explore the possibility of borrowing iButton necklaces, so that students can collect their own temperature and humidity data.</p>
-			</div>
-		</div>
+    <section class="masthead" aria-label="Intro banner">
+      <div class="container masthead__inner">
+        <div class="brand-row">
+          <!-- small visual badges -->
+          <div class="badge-list" aria-hidden="true">
+            <div class="badge"></div>
+            <div class="badge"></div>
+            <div class="badge"></div>
+          </div>
+        </div>
+      </div>
 
-		<div class="ribbon" aria-hidden="true">
-			<span class="ribbon__label">Strengths of the Module</span>
-			<div class="content-card" style="margin-bottom: 24px;">
-				<ul>
-					<li><p>Students synthesize information derived from many different disciplines to assess controls on temperature and humidity in their surroundings. Accordingly, it works well in introducing non-geoscience students to the methods, data and issues of geoscience, as well as helping geoscience majors appreciate the societal relevance of temperature and humidity and the value of incorporating socioeconomic information and other information in evaluating geoscience problems and solutions.</p></li>
-					<li><p>Temperature and humidity data sets are highlighted throughout the module. Students are challenged to consider the application of geoscience data to their personal lives and the lives of others in the communities in which they live.</p></li>
-					<li><p>Students are repeatedly challenged to consider complex temperature and humidity problems as part of socio-ecological systems. It is particularly evident in the module when we have students learn what goes into variations in temperature and humidity from one microclimate to another, consider the interplay between temperature, humidity, human and natural materials, and human activities, and understand the processes leading to the generation of urban heat islands.</p></li>
-				</ul>
-			</div>
-		</div>
+      <!-- main intro banner -->
+      <div class="banner">
+        <div class="container banner__inner">
+          <div class="module-card">
+            <h2>Climate Literacy in Undergraduate Education</h2>
+            <div class="module-meta">
+              <span><mark><b>(100)</b></mark> / 200 / 300 / 400 : <b>Intro-Level</b></span>
+            </div>
+            <div class="inline-actions">
+              <p>1–2 Weeks / 6 Units</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<div class="ribbon" aria-hidden="true">
-			<div class="content-card" style="margin-bottom: 24px;">
-				<p><b>Students will be able to evaluate temperature and humidity data on scales ranging from their immediate surroundings to the global. In particular, students will be able to:</b></p>
-				<ul>
-					<li><p>explain how temperature and humidity extremes pose threats to human well-being.</p></li>
-					<li><p>explain controls on temperature and humidity and apply these concepts.</p></li>
-					<li><p>explain what controls geographic variability in temperate and humidity in microclimates and at regional and global scales.</p></li>
-					<li><p>apply geoscience information and methods in interdisciplinary assessments of temperature and humidity as they relate to sustainability.</p></li>
-				</ul>
-			</div>
-		</div>
+    <div class="ribbon" aria-hidden="true">
+      <span class="ribbon__label">Summary</span>
+      <div class="content-card" style="margin-bottom: 24px;">
+        <!-- summary text -->
+        <p>Exposure to extreme temperatures and humidity is a significant public health concern to all populations, especially in urban areas, where the urban heat island exacerbates extreme heat and increases heat exposure and heat-related illnesses and death. Traditional ambient weather measurement is obtained through hourly weather stations, such as those at airports. However, fixed-location weather stations do not capture the variability of heat within the microclimates of an urban area and, thus, do not identify more vulnerable populations that need increased resources and mitigation before and during heat events.</p>
+        <p>Students complete an in-depth microclimate curriculum, collect their own heat exposure data, analyze their data and compare their exposure to others in the class, work with fellow students to interpret results, and apply both scientific and sociological concepts to their results. By completing this curriculum, students learn about microclimate conditions actually encountered by college students. Data was collected by students who wore small temperature and humidity pendants suspended from necklaces during a 2-day interval. Instructors are encouraged to reach out to project lead, Dr. Alisa Hass (Alisa.Hass@mtsu.edu), to explore the possibility of borrowing iButton necklaces, so that students can collect their own temperature and humidity data.</p>
+      </div>
+    </div>
 
-		<div class="ribbon" id="courses" aria-hidden="true">
-			<span class="ribbon__label">A Great Fit for Courses In:</span>
-			<div class="content-card" style="margin-bottom: 24px;">
-				<ul>
-					<li><p>Sustainability</p></li>
-					<li><p>Atmospheric Science</p></li>
-					<li><p>Geology</p></li>
-					<li><p>Geography</p></li>
-					<li><p>Earth Science</p></li>
-					<li><p>Environmental Science</p></li>
-				</ul>
-			</div>
-		</div>
+    <div class="ribbon" aria-hidden="true">
+      <span class="ribbon__label">Strengths of the Module</span>
+      <div class="content-card" style="margin-bottom: 24px;">
+        <!-- strengths list -->
+        <ul>
+          <li><p>Students pull together info from different subjects to understand what affects temperature and humidity in their surroundings.</p></li>
+          <li><p>Data sets are used throughout the module, helping students connect scientific data to daily life and community issues.</p></li>
+          <li><p>Students explore how human and natural systems interact to create things like urban heat islands.</p></li>
+        </ul>
+      </div>
+    </div>
 
-		<hr>
+    <div class="ribbon" aria-hidden="true">
+      <div class="content-card" style="margin-bottom: 24px;">
+        <!-- learning goals -->
+        <p><b>Students will be able to work with temperature and humidity data on local to global scales. They should be able to:</b></p>
+        <ul>
+          <li><p>explain how extremes affect health and safety.</p></li>
+          <li><p>describe key factors that control temperature and humidity.</p></li>
+          <li><p>identify reasons for variation in microclimates and larger regions.</p></li>
+          <li><p>use geoscience tools to connect temperature and humidity to sustainability issues.</p></li>
+        </ul>
+      </div>
+    </div>
 
-		<main class="main">
-			<div class="container">
-				<!-- Main Resources Buttons -->
-				<div class="resources-grid" style="margin-bottom:24px; display:flex; flex-direction:column; gap:12px;">
-					<a id="module" class="resource-card" href="webpages/InstructorMaterials.html">
-						Instructor Materials: Learning Outcomes
-					</a>
+    <div class="ribbon" id="courses" aria-hidden="true">
+      <span class="ribbon__label">A Great Fit for Courses In:</span>
+      <div class="content-card" style="margin-bottom: 24px;">
+        <!-- suggested courses -->
+        <ul>
+          <li><p>Sustainability</p></li>
+          <li><p>Atmospheric Science</p></li>
+          <li><p>Geology</p></li>
+          <li><p>Geography</p></li>
+          <li><p>Earth Science</p></li>
+          <li><p>Environmental Science</p></li>
+        </ul>
+      </div>
+    </div>
 
-					<a class="resource-card" href="InstructionalPPTsAndVideos/CLUE%20Video%20Links.docx" download>
-						Download Project Videos
-					</a>
-				</div>
+    <hr>
 
-				<ul class="list" style="margin-bottom:24px;">
-					<div class="units-grid" style="margin-bottom:24px;">
-						<a class="unit-card" href="webpages/unit1.html">
-							<h3>Unit 1</h3>
-							<p>Earth's Energy</p>
-						</a>
+    <main class="main">
+      <div class="container">
+        <!-- instructor materials and downloads -->
+        <div class="resources-grid" style="margin-bottom:24px; display:flex; flex-direction:column; gap:12px;">
+          <a id="module" class="resource-card" href="webpages/InstructorMaterials.html">
+            Instructor Materials: Learning Outcomes
+          </a>
 
-						<a class="unit-card" href="webpages/unit2.html">
-							<h3>Unit 2</h3>
-							<p>The Earth's Varying Climate</p>
-						</a>
+          <a class="resource-card" href="InstructionalPPTsAndVideos/CLUE%20Video%20Links.docx" download>
+            Download Project Videos
+          </a>
+        </div>
 
-						<a class="unit-card" href="webpages/unit3.html">
-							<h3>Unit 3</h3>
-							<p>The Basics of Climate Change</p>
-						</a>
+        <!-- unit links -->
+        <ul class="list" style="margin-bottom:24px;">
+          <div class="units-grid" style="margin-bottom:24px;">
+            <a class="unit-card" href="webpages/unit1.html">
+              <h3>Unit 1</h3>
+              <p>Earth's Energy</p>
+            </a>
 
-						<a class="unit-card" href="webpages/unit4.html">
-							<h3>Unit 4</h3>
-							<p>Human Alterations to Climate</p>
-						</a>
+            <a class="unit-card" href="webpages/unit2.html">
+              <h3>Unit 2</h3>
+              <p>The Earth's Varying Climate</p>
+            </a>
 
-						<a class="unit-card" href="webpages/unit5.html">
-							<h3>Unit 5</h3>
-							<p>Microclimates</p>
-						</a>
+            <a class="unit-card" href="webpages/unit3.html">
+              <h3>Unit 3</h3>
+              <p>The Basics of Climate Change</p>
+            </a>
 
-						<a class="unit-card" href="webpages/unit6.html">
-							<h3>Unit 6</h3>
-							<p>Climate Change Effects</p>
-						</a>
-					</div>
-				</ul>
+            <a class="unit-card" href="webpages/unit4.html">
+              <h3>Unit 4</h3>
+              <p>Human Alterations to Climate</p>
+            </a>
 
-				<div class="resources-grid" style="margin-bottom:24px; display:flex; flex-direction:column; gap:12px;">
-					<a class="resource-card" href="webpages/StudentMaterials.html">
-						Student Materials
-					</a>
+            <a class="unit-card" href="webpages/unit5.html">
+              <h3>Unit 5</h3>
+              <p>Microclimates</p>
+            </a>
 
-					<a class="resource-card" href="webpages/assessment.html">
-						Assessment
-					</a>
+            <a class="unit-card" href="webpages/unit6.html">
+              <h3>Unit 6</h3>
+              <p>Climate Change Effects</p>
+            </a>
+          </div>
+        </ul>
 
-					<a class="resource-card" href="webpages/InstructorStories.html">
-						Coming Soon!
-					</a>
+        <!-- other resources -->
+        <div class="resources-grid" style="margin-bottom:24px; display:flex; flex-direction:column; gap:12px;">
+          <a class="resource-card" href="webpages/StudentMaterials.html">
+            Student Materials
+          </a>
 
-					<a class="resource-card" href="webpages/ContactForm.html">
-						Email PI
-					</a>
-				</div>
-			</div>
-		</main>
+          <a class="resource-card" href="webpages/assessment.html">
+            Assessment
+          </a>
 
-		<footer class="site-footer">
-			<div class="container site-footer__inner">
-				<p>© <span id="year"></span> CLUE Project</p>
-			</div>
-		</footer>
+          <a class="resource-card" href="webpages/InstructorStories.html">
+            Coming Soon!
+          </a>
 
-		<!--External JavaScript-->
-		<script type="text/javascript">document.getElementById('year').textContent = new Date().getFullYear();</script>
-	</body>
+          <a class="resource-card" href="webpages/ContactForm.html">
+            Email PI
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>© <span id="year"></span> CLUE Project</p>
+      </div>
+    </footer>
+
+    <!-- set footer year dynamically -->
+    <script type="text/javascript">
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
+
