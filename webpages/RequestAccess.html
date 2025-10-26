@@ -1,181 +1,221 @@
 <!--
-	AUTHORS:     Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
-	FILE:        RequestAccess.html
-	DESCRIPTION: This file contains the html code for the RequestAccess webpage.
+  AUTHORS:     Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
+  FILE:        RequestAccess.html
+  DESCRIPTION: This webpage provides a secure way for faculty or teaching assistants 
+               to request access to CLUE materials via EmailJS, or to enter an approved 
+               access code to unlock downloadable resources.
 -->
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>CLUE: Request Access</title> <!--what we see in the browser’s title bar or page tab-->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUE: Request Access</title> <!-- Browser tab title -->
 
-		<!--External CSS Stylesheet-->
-		<link href="../CLUE.css" type="text/css" rel="stylesheet">
-	</head>
+    <!-- External CSS Stylesheet for layout, colors, and typography -->
+    <link href="../CLUE.css" type="text/css" rel="stylesheet">
+  </head>
 
-	<body>
-		<header class="site-header">
-			<div class="container site-header__inner">
-				<div class="brand">
-					<img class="brand__logo" src="../LogosAndBranding/CLUE%20-%20black.png" alt="CLUE logo">
-					<h1 class="brand__title">Climate Literacy in Undergraduate Education (CLUE)</h1>
-				</div>
-				<nav class="site-nav" aria-label="Primary">
-					<a href="../CLUE.html">Home</a>
-					<a href="../CLUE.html#module">Module Materials</a>
-					<a id="unit" href="unit1.html">Unit 1</a>
-					<a id="unit" href="unit2.html">Unit 2</a>
-					<a id="unit" href="unit3.html">Unit 3</a>
-					<a id="unit" href="unit4.html">Unit 4</a>
-					<a id="unit" href="unit5.html">Unit 5</a>
-					<a id="unit" href="unit6.html">Unit 6</a>
-				</nav>
-			</div>
-		</header>
+  <body>
+    <!-- HEADER SECTION: Contains site branding and main navigation links -->
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <div class="brand">
+          <!-- CLUE logo and project title -->
+          <img class="brand__logo" src="../LogosAndBranding/CLUE%20-%20black.png" alt="CLUE logo">
+          <h1 class="brand__title">Climate Literacy in Undergraduate Education (CLUE)</h1>
+        </div>
 
-		<div class="clue-request-page">
-			<div class="container">
-				<img src="../LogosAndBranding/CLUE%20-%20white.png" alt="CLUE Logo" class="logo" />
-				<h1 id="portalTitle">Request Access</h1>
+        <!-- Primary navigation bar linking to modules and units -->
+        <nav class="site-nav" aria-label="Primary">
+          <a href="../CLUE.html">Home</a>
+          <a href="../CLUE.html#module">Module Materials</a>
+          <a id="unit" href="unit1.html">Unit 1</a>
+          <a id="unit" href="unit2.html">Unit 2</a>
+          <a id="unit" href="unit3.html">Unit 3</a>
+          <a id="unit" href="unit4.html">Unit 4</a>
+          <a id="unit" href="unit5.html">Unit 5</a>
+          <a id="unit" href="unit6.html">Unit 6</a>
+        </nav>
+      </div>
+    </header>
 
-				<div class="toggle-buttons">
-					<button id="showRequest">Request Access</button>
-					<button id="showCode">Enter Access Code</button>
-				</div>
+    <!-- MAIN CONTENT AREA: Access request and authentication functionality -->
+    <div class="clue-request-page">
+      <div class="container">
+        <!-- Project logo and section title -->
+        <img src="../LogosAndBranding/CLUE%20-%20white.png" alt="CLUE Logo" class="logo" />
+        <h1 id="portalTitle">Request Access</h1>
 
-				<!-- REQUEST ACCESS SECTION -->
-				<div id="requestSection">
-					<p>
-						Faculty and teaching assistants can request access to CLUE materials by entering their institutional email below.
-					</p>
+        <!-- TOGGLE BUTTONS: Switch between request form and access code input -->
+        <div class="toggle-buttons">
+          <button id="showRequest">Request Access</button>
+          <button id="showCode">Enter Access Code</button>
+        </div>
 
-					<form id="cf-form">
-						<input type="email" id="cf-email" name="cf-email" placeholder="name@school.edu" required />
-						<input type="text" id="website" name="website" style="display:none" tabindex="-1" autocomplete="off" />
-						<button type="submit">Request Access</button>
-						<p id="cf-status" class="status"></p>
-					</form>
-				</div>
+        <!-- REQUEST ACCESS SECTION -->
+        <div id="requestSection">
+          <p>
+            Faculty and teaching assistants can request access to CLUE materials by entering their institutional email below.
+          </p>
 
-				<!-- ENTER ACCESS CODE SECTION -->
-				<div id="codeSection" class="hidden">
-					<p>Enter your approved access code below to unlock the CLUE materials.</p>
+          <!-- EmailJS form for sending access requests to instructor -->
+          <form id="cf-form">
+            <!-- Email input field (required institutional email) -->
+            <input type="email" id="cf-email" name="cf-email" placeholder="name@school.edu" required />
 
-					<input type="password" id="accessInput" placeholder="Enter access code" />
-					<button onclick="verifyCode()">Submit</button>
-					<p id="status" class="status"></p>
+            <!-- Hidden honeypot input for spam prevention -->
+            <input type="text" id="website" name="website" style="display:none" tabindex="-1" autocomplete="off" />
 
-					<div id="downloads" class="downloads hidden">
-						<h3>Approved Materials</h3>
-						<a href="../LearningOutcomesAndQuestionBank/Question%20Bank.docx" download>Answer Key</a>
-					</div>
-				</div>
-			</div>
+            <!-- Submit button for sending the email -->
+            <button type="submit">Request Access</button>
 
-			<!-- EmailJS Library -->
-			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+            <!-- Status message shown after form submission -->
+            <p id="cf-status" class="status"></p>
+          </form>
+        </div>
 
-			<script type="text/javascript">
-				(function(){
-					emailjs.init({
-						publicKey: "S0gAoFE1GFAdCoe4-",
-					});
-				})();
-			</script>
+        <!-- ENTER ACCESS CODE SECTION -->
+        <div id="codeSection" class="hidden">
+          <p>Enter your approved access code below to unlock the CLUE materials.</p>
 
-			<!-- Combined JS Logic -->
-			<script>
-				// Toggle sections
-				const requestBtn = document.getElementById("showRequest");
-				const codeBtn = document.getElementById("showCode");
-				const requestSection = document.getElementById("requestSection");
-				const codeSection = document.getElementById("codeSection");
-				const portalTitle = document.getElementById("portalTitle");
+          <!-- Input field for the access code -->
+          <input type="password" id="accessInput" placeholder="Enter access code" />
 
-				requestBtn.addEventListener("click", () => {
-					if (!requestBtn.disabled) {
-						requestSection.classList.remove("hidden");
-						codeSection.classList.add("hidden");
-						portalTitle.textContent = "Request Access";
-					}
-				});
+          <!-- Button to validate the entered access code -->
+          <button onclick="verifyCode()">Submit</button>
 
-				codeBtn.addEventListener("click", () => {
-					codeSection.classList.remove("hidden");
-					requestSection.classList.add("hidden");
-					portalTitle.textContent = "Enter Access Code";
-				});
+          <!-- Status message after code verification -->
+          <p id="status" class="status"></p>
 
-				// EmailJS logic
-				const form = document.getElementById("cf-form");
-				const emailInput = document.getElementById("cf-email");
-				const honeypot = document.getElementById("website");
-				const statusEl = document.getElementById("cf-status");
+          <!-- Hidden download link revealed upon successful code entry -->
+          <div id="downloads" class="downloads hidden">
+            <h3>Approved Materials</h3>
+            <a href="../LearningOutcomesAndQuestionBank/Question%20Bank.docx" download>Answer Key</a>
+          </div>
+        </div>
+      </div>
 
-				let openedAt = Date.now();
+      <!-- EMAILJS SCRIPT: Enables front-end email sending through EmailJS service -->
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-				function looksLikeEmail(s) {
-				  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s).trim());
-				}
+      <script type="text/javascript">
+        (function(){
+          // Initialize EmailJS with the project’s public key
+          emailjs.init({
+            publicKey: "S0gAoFE1GFAdCoe4-",
+          });
+        })();
+      </script>
 
-				form.addEventListener("submit", async (e) => {
-					e.preventDefault();
+      <!-- MAIN JAVASCRIPT LOGIC: Handles toggling, form submission, and authentication -->
+      <script>
+        // --- TOGGLE BETWEEN REQUEST AND CODE SECTIONS ---
+        const requestBtn = document.getElementById("showRequest");
+        const codeBtn = document.getElementById("showCode");
+        const requestSection = document.getElementById("requestSection");
+        const codeSection = document.getElementById("codeSection");
+        const portalTitle = document.getElementById("portalTitle");
 
-					if (honeypot.value.trim() !== "") return;
-					if (Date.now() - openedAt < 1200) {
-						statusEl.textContent = "Please wait a moment and try again.";
-						statusEl.style.color = '#b91c1c';
-						return;
-					}
+        // Show the Request Access section and hide the Access Code section
+        requestBtn.addEventListener("click", () => {
+          if (!requestBtn.disabled) {
+            requestSection.classList.remove("hidden");
+            codeSection.classList.add("hidden");
+            portalTitle.textContent = "Request Access";
+          }
+        });
 
-					const email = emailInput.value.trim();
-					if (!looksLikeEmail(email)) {
-						statusEl.textContent = "Please enter a valid institutional email address.";
-						statusEl.style.color = '#b91c1c';
-						emailInput.focus();
-						return;
-					}
+        // Show the Access Code section and hide the Request Access section
+        codeBtn.addEventListener("click", () => {
+          codeSection.classList.remove("hidden");
+          requestSection.classList.add("hidden");
+          portalTitle.textContent = "Enter Access Code";
+        });
 
-					statusEl.textContent = "Sending...";
-					statusEl.style.color = '#374151';
+        // --- EMAILJS LOGIC FOR REQUEST FORM ---
+        const form = document.getElementById("cf-form");
+        const emailInput = document.getElementById("cf-email");
+        const honeypot = document.getElementById("website");
+        const statusEl = document.getElementById("cf-status");
 
-					try {
-						const result = await emailjs.send("service_aoelayf", "template_pi8ottj", { email: email });
-						console.log("Email sent:", result.text);
-						statusEl.textContent = "Request sent successfully!";
-						statusEl.style.color = "#16a34a";
-						form.reset();
-						openedAt = Date.now();
-					} catch (err) {
-						console.error("EmailJS error:", err);
-						statusEl.textContent = "Error sending request. Please try again later.";
-						statusEl.style.color = "#b91c1c";
-					}
-				});
+        let openedAt = Date.now(); // Used to prevent rapid spam submissions
 
-				// Access Code logic
-				const ACCESS_CODE = "MTSU2025";
-				const inputCode = document.getElementById("accessInput");
-				const status = document.getElementById("status");
-				const downloads = document.getElementById("downloads");
+        // Basic email format validation
+        function looksLikeEmail(s) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s).trim());
+        }
 
-				function verifyCode() {
-					const value = inputCode.value.trim();
-					if (value === ACCESS_CODE) {
-						downloads.classList.remove("hidden");
-						status.textContent = "Access granted. You may now download the materials.";
-						status.style.color = "#16a34a";
-						requestSection.classList.add("hidden");
-						requestBtn.disabled = true;
-						requestBtn.style.opacity = "0.6";
-					} else {
-						status.textContent = "Invalid access code.";
-						status.style.color = "#b91c1c";
-					}
-				}
-			</script>
-		</div>
-	</body>
+        // Handle form submission event
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          // Stop if honeypot is filled (spam) or too fast submission
+          if (honeypot.value.trim() !== "") return;
+          if (Date.now() - openedAt < 1200) {
+            statusEl.textContent = "Please wait a moment and try again.";
+            statusEl.style.color = '#b91c1c';
+            return;
+          }
+
+          // Validate email before sending
+          const email = emailInput.value.trim();
+          if (!looksLikeEmail(email)) {
+            statusEl.textContent = "Please enter a valid institutional email address.";
+            statusEl.style.color = '#b91c1c';
+            emailInput.focus();
+            return;
+          }
+
+          // Display sending status
+          statusEl.textContent = "Sending...";
+          statusEl.style.color = '#374151';
+
+          try {
+            // Send email using EmailJS service and configured template
+            const result = await emailjs.send("service_aoelayf", "template_pi8ottj", { email: email });
+            console.log("Email sent:", result.text);
+
+            // Update success message
+            statusEl.textContent = "Request sent successfully!";
+            statusEl.style.color = "#16a34a";
+            form.reset();
+            openedAt = Date.now();
+          } catch (err) {
+            // Handle any EmailJS errors
+            console.error("EmailJS error:", err);
+            statusEl.textContent = "Error sending request. Please try again later.";
+            statusEl.style.color = "#b91c1c";
+          }
+        });
+
+        // --- ACCESS CODE VALIDATION LOGIC ---
+        const ACCESS_CODE = "MTSU2025"; // Current valid access code
+        const inputCode = document.getElementById("accessInput");
+        const status = document.getElementById("status");
+        const downloads = document.getElementById("downloads");
+
+        // Compare entered access code to the stored one
+        function verifyCode() {
+          const value = inputCode.value.trim();
+          if (value === ACCESS_CODE) {
+            // Unlock downloads if the code matches
+            downloads.classList.remove("hidden");
+            status.textContent = "Access granted. You may now download the materials.";
+            status.style.color = "#16a34a";
+
+            // Hide request section and disable further requests
+            requestSection.classList.add("hidden");
+            requestBtn.disabled = true;
+            requestBtn.style.opacity = "0.6";
+          } else {
+            // Show invalid code message
+            status.textContent = "Invalid access code.";
+            status.style.color = "#b91c1c";
+          }
+        }
+      </script>
+    </div>
+  </body>
 </html>
