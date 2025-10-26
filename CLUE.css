@@ -4,22 +4,26 @@
 	DESCRIPTION: This file contains the CSS code for the CLUE website.
 */
 
+/* -------------------- Root Variables -------------------- */
+/* Define theme colors and base styles for the site */
 :root {
-	--brand-bg: #0f2e3d;
-	--brand-accent: #2aa198;
-	--brand-accent-2: #268bd2;
-	--surface: #ffffff;
-	--text: #102a43;
-	--muted-text: #486581;
-	--border: #e1e8ed;
-	--surface-2: #f7fbfd;
+	--brand-bg: #0f2e3d;          /* Main brand background color */
+	--brand-accent: #2aa198;      /* Primary accent color for highlights/buttons */
+	--brand-accent-2: #268bd2;    /* Secondary accent color (blue tone) */
+	--surface: #ffffff;           /* Background color for cards, headers, footers */
+	--text: #102a43;              /* Main text color */
+	--muted-text: #486581;        /* Muted/secondary text color */
+	--border: #e1e8ed;            /* Light border color */
+	--surface-2: #f7fbfd;         /* Light variant for page background */
 }
 
-/* Base */
+/* -------------------- Base Styles -------------------- */
+/* Apply box-sizing to include padding/border in element width */
 * {
 	box-sizing: border-box;
 }
 
+/* Reset margins, set base font, line height, and page background */
 html, body {
 	margin: 0;
 	padding: 0;
@@ -29,33 +33,42 @@ html, body {
 	line-height: 1.5;
 }
 
+/* Make images responsive and block-level to remove extra space */
 img {
 	max-width: 100%;
 	display: block;
 }
 
+/* -------------------- Links -------------------- */
+/* Base link color and remove underline */
 a {
 	color: var(--brand-accent-2);
 	text-decoration: none;
 }
 
+/* Underline links on hover/focus for accessibility */
 a:hover,
 a:focus {
 	text-decoration: underline;
 }
 
+/* -------------------- Horizontal Rule -------------------- */
+/* Custom divider styling */
 hr {
 	border: 3px solid #000;
 	margin-bottom: 25px;
 }
 
+/* -------------------- Container -------------------- */
+/* Center content and constrain width */
 .container {
 	max-width: 1100px;
 	margin: 0 auto;
 	padding: 0 16px;
 }
 
-/* Header */
+/* -------------------- Header -------------------- */
+/* Sticky header at top with border */
 .site-header {
 	position: sticky;
 	top: 0;
@@ -64,6 +77,7 @@ hr {
 	border-bottom: 1px solid var(--border);
 }
 
+/* Flex container for logo, navigation, spacing */
 .site-header__inner {
 	margin: 0;
 	display: flex;
@@ -74,6 +88,7 @@ hr {
 	flex-wrap: nowrap;
 }
 
+/* Brand/logo container */
 .brand {
 	display: flex;
 	align-items: center;
@@ -81,12 +96,14 @@ hr {
 	flex-shrink: 0;
 }
 
+/* Logo image sizing */
 .brand__logo {
 	height: 36px;
 	width: auto;
 	object-fit: contain;
 }
 
+/* Brand title styling */
 .brand__title {
 	font-size: 18px;
 	font-weight: 700;
@@ -95,6 +112,7 @@ hr {
 	text-overflow: unset;
 }
 
+/* Navigation styling */
 .site-nav {
 	display: flex;
 	align-items: center;
@@ -116,12 +134,12 @@ hr {
 	text-decoration: none;
 }
 
-/* Main */
+/* -------------------- Main Content -------------------- */
 .main {
 	padding: 0 0 56px 0;
 }
 
-/* Lists in content pages */
+/* -------------------- Lists -------------------- */
 .list {
 	list-style: none;
 	padding: 0;
@@ -140,7 +158,7 @@ hr {
 	text-decoration: none;
 }
 
-/* Footer */
+/* -------------------- Footer -------------------- */
 .site-footer {
 	margin-top: 40px;
 	background: var(--surface);
@@ -153,11 +171,12 @@ hr {
 	font-size: 14px;
 }
 
+/* -------------------- Responsive Text -------------------- */
 @media (min-width: 900px) {
-    .module-card h2 { font-size: 24px; }
+    .module-card h2 { font-size: 24px; } /* Larger module card titles on wide screens */
 }
 
-/* Masthead like the reference */
+/* -------------------- Masthead -------------------- */
 .masthead {
 	background: linear-gradient(180deg, #7cc0db 0%, #5aa3c2 28%, #2d6f93 100%);
 	color: #fff;
@@ -169,6 +188,7 @@ hr {
 	padding: 18px 0 10px 0;
 }
 
+/* Row of brand logos/badges */
 .brand-row {
 	display: flex;
 	align-items: center;
@@ -187,17 +207,18 @@ hr {
     border-radius: 50%;
     background: #e9f6fb;
     border: 2px solid rgba(255,255,255,0.7);
-    margin-left: -14px; /* overlap */
+    margin-left: -14px; /* overlapping effect */
 }
 
 .badge:first-child { margin-left: 0; }
 
-/* Badge images */
+/* Badge images setup */
 .badge-list .badge { background-size: cover; background-position: center; }
 .badge-list .badge:nth-child(1) { background-image: url('images/placeholder.png'); }
 .badge-list .badge:nth-child(2) { background-image: url('images/placeholder.png'); }
 .badge-list .badge:nth-child(3) { background-image: url('images/placeholder.png'); }
 
+/* Banner background + overlay gradient */
 .banner {
 	position: relative;
 	height: 340px;
@@ -208,6 +229,7 @@ hr {
 
 .banner__inner { position: relative; height: 100%; }
 
+/* -------------------- Module Card Overlay -------------------- */
 .module-card {
 	position: absolute;
 	right: 24px;
@@ -225,11 +247,12 @@ hr {
 	z-index: 1;
 }
 
+/* Module card header styling */
 .module-card h2 { margin: 0 0 10px 0; font-size: 22px; line-height: 1.3; }
 .module-meta { display: flex; align-items: center; gap: 16px; color: var(--muted-text); font-size: 13px; flex-wrap: wrap; margin-bottom: 10px; }
 .inline-actions { display: flex; gap: 8px; position: static; flex-wrap: wrap; }
 
-/* Summary ribbon + card */
+/* -------------------- Ribbon and Cards -------------------- */
 .ribbon {
     margin: 8px auto 0 auto;
 	max-width: 1100px;
@@ -245,6 +268,7 @@ hr {
 	font-weight: 700;
 }
 
+/* Course cards inside ribbon */
 #courses.ribbon ul {
 	display: flex;
 	flex-wrap: wrap;
@@ -264,11 +288,11 @@ hr {
 	box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
-/* Resource Cards (non-unit links) */
+/* -------------------- Resource Cards -------------------- */
 .resource-card {
 	display: block;
 	padding: 16px 20px;
-	background: #e1f0f7; /* light blue to distinguish from units */
+	background: #e1f0f7; /* light blue background */
 	border-radius: 12px;
 	border: 1px solid #b0d4e6;
 	text-decoration: none;
@@ -283,11 +307,12 @@ hr {
 	transform: translateY(-2px);
 }
 
+/* -------------------- Anchors -------------------- */
 #module {
 	scroll-margin-top: 100px;
 }
 
-/* Formatting for Unit Cards */
+/* -------------------- Unit Cards -------------------- */
 .units-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -325,6 +350,7 @@ hr {
 	font-weight: bold;
 }
 
+/* -------------------- Story section -------------------- */
 .story {
 	margin-bottom: 40px;
 	overflow: auto;
@@ -337,17 +363,13 @@ hr {
 	object-fit: cover;
 }
 
-/* Unit Pages (Unit 1–6) */
-/* Assessment Page */
-/* Instructor Stories Page */
-/* Student Material Page */
+/* -------------------- Unit Page Layout -------------------- */
 .mainBlock {
 	max-width: 1100px;
 	margin: 24px auto;
 	padding: 16px;
 }
 
-/* Main header on each unit page */
 .mainBlock header .unit__name {
 	font-size: 28px;
 	color: var(--brand-accent-2);
@@ -355,7 +377,6 @@ hr {
 	text-align: center;
 }
 
-/* Section styling for learning outcomes, downloads, etc. */
 .mainBlock section {
 	background: var(--surface);
 	border: 1px solid var(--border);
@@ -365,13 +386,11 @@ hr {
 	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Section headings */
 .mainBlock section h2 {
 	color: var(--brand-accent);
 	margin-bottom: 12px;
 }
 
-/* Ordered list styling for learning outcomes */
 .mainBlock section ol {
 	padding-left: 20px;
 }
@@ -380,7 +399,7 @@ hr {
 	margin-bottom: 8px;
 }
 
-/* Download button */
+/* Buttons inside sections */
 .mainBlock section a button {
 	background: var(--brand-accent-2);
 	color: #fff;
@@ -392,25 +411,22 @@ hr {
 	transition: background 0.2s ease, transform 0.15s ease;
 }
 
-/* Download button hover effect */
 .mainBlock section a button:hover {
 	background: var(--brand-accent);
 	transform: translateY(-2px);
 }
 
-/* Highlight the current unit page in navigation */
+/* Highlight active nav link */
 .site-nav a.active {
 	color: var(--brand-accent-2);
 	font-weight: bold;
 	text-decoration: underline;
 }
 
-/* Space between buttons on Student Materials and similar pages */
 .mainBlock section ul li {
 	margin-bottom: 12px; 
 }
 
-/* Standalone buttons in section paragraphs (like Request Answer Key) */
 .mainBlock section p button {
 	background: var(--brand-accent-2);
 	color: #fff;
@@ -420,7 +436,7 @@ hr {
 	font-size: 16px;
 	cursor: pointer;
 	transition: background 0.2s ease, transform 0.15s ease;
-	margin-bottom: 12px; /* adds space below button */
+	margin-bottom: 12px;
 }
 
 .mainBlock section p button:hover {
@@ -428,7 +444,7 @@ hr {
 	transform: translateY(-2px);
 }
 
-/* Center the form on the page */
+/* -------------------- Contact Form -------------------- */
 .contact-container {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	background-color: #f9fafb;
@@ -441,14 +457,12 @@ hr {
 	box-sizing: border-box;
 }
 
-/* Heading style */
 .contact-container h1 {
 	text-align: center;
 	color: #333;
 	margin-bottom: 20px;
 }
 
-/* Form container */
 #contact-form {
 	background-color: #fff;
 	padding: 30px 40px;
@@ -460,7 +474,6 @@ hr {
  	flex-direction: column;
 }
 
-/* Label styling */
 #contact-form label {
 	font-weight: 600;
 	color: #444;
@@ -468,7 +481,6 @@ hr {
 	margin-top: 14px;
 }
 
-/* Input, select, textarea styles */
 #contact-form input,
 #contact-form select,
 #contact-form textarea {
@@ -481,7 +493,6 @@ hr {
 	box-sizing: border-box;
 }
 
-/* Focus effect */
 #contact-form input:focus,
 #contact-form select:focus,
 #contact-form textarea:focus {
@@ -490,13 +501,11 @@ hr {
 	outline: none;
 }
 
-/* Textarea sizing */
 #contact-form textarea {
 	min-height: 100px;
 	resize: vertical;
 }
 
-/* Button styling */
 #contact-form button {
 	background-color: #0077b6;
 	color: white;
@@ -518,7 +527,6 @@ hr {
 	transform: translateY(1px);
 }
 
-/* Status message */
 #status-message {
 	margin-top: 10px;
 	font-size: 0.95rem;
@@ -526,7 +534,7 @@ hr {
 	text-align: center;
 }
 
-/* CLUE Website - Request Form */
+/* -------------------- CLUE Request Page -------------------- */
 .clue-request-page {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #f6f9fc;
@@ -536,7 +544,6 @@ hr {
 	margin: 0;
 }
 
-/* Main container */
 .clue-request-page .container {
 	background-color: #ffffff;
 	padding: 2rem;
@@ -547,42 +554,29 @@ hr {
 	margin: 5rem auto;
 }
 
-/* Headings */
 .clue-request-page h1 {
 	margin-top: 0;
 	color: #1e3a8a;
 }
 
-/* Subtitle text (if used) */
 .clue-request-page .subtitle {
 	font-size: 0.95rem;
 	color: #475569;
 	margin-bottom: 1.5rem;
 }
 
-/* Form layout */
 .clue-request-page form {
 	display: flex;
 	flex-direction: column;
 }
 
-/* Form labels */
 .clue-request-page label {
 	text-align: left;
 	margin-bottom: 0.5rem;
 	font-weight: bold;
 }
 
-/* Email input */
-.clue-request-page input[type="email"] {
-	padding: 0.75rem;
-	font-size: 1rem;
-	border: 1px solid #cbd5e1;
-	border-radius: 8px;
-	margin-bottom: 1rem;
-}
-
-/* Password input (for access code) */
+.clue-request-page input[type="email"],
 .clue-request-page input[type="password"] {
 	padding: 0.75rem;
 	font-size: 1rem;
@@ -591,7 +585,6 @@ hr {
 	margin-bottom: 1rem;
 }
 
-/* Buttons (general) */
 .clue-request-page button {
 	background-color: #1e40af;
 	color: white;
@@ -602,19 +595,16 @@ hr {
 	transition: background-color 0.3s;
 }
 
-/* Button hover */
 .clue-request-page button:hover {
 	background-color: #1d4ed8;
 }
 
-/* Status messages */
 .clue-request-page .status {
 	margin-top: 1rem;
 	font-size: 0.95rem;
 	font-weight: 500;
 }
 
-/* Toggle button section */
 .clue-request-page .toggle-buttons {
 	display: flex;
 	justify-content: center;
@@ -641,19 +631,16 @@ hr {
 	cursor: not-allowed;
 }
 
-/* Hidden class utility */
 .clue-request-page .hidden {
 	display: none;
 }
 
-/* Logo image */
 .clue-request-page .logo {
 	width: 250px;
 	margin: auto;
 	margin-bottom: 1rem;
 }
 
-/* Download links section */
 .clue-request-page .downloads a {
 	display: block;
 	margin: 0.5rem 0;
@@ -665,3 +652,4 @@ hr {
 .clue-request-page .downloads a:hover {
 	text-decoration: underline;
 }
+
