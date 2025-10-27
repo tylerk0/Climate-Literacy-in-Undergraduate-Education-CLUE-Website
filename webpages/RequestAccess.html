@@ -1,33 +1,31 @@
 <!--
-  AUTHORS:     Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
-  FILE:        RequestAccess.html
-  DESCRIPTION: This webpage provides a secure way for faculty or teaching assistants 
-               to request access to CLUE materials via EmailJS, or to enter an approved 
-               access code to unlock downloadable resources.
+  AUTHORS: Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
+  FILE:    RequestAccess.html
+  PURPOSE: This webpage provides a secure way for faculty or teaching assistants to request access to CLUE materials via EmailJS, or to enter an approved access code to unlock downloadable resources.
 -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- basic page info -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLUE: Request Access</title> <!-- Browser tab title -->
+    <title>CLUE: Request Access</title>
 
-    <!-- External CSS Stylesheet for layout, colors, and typography -->
+    <!-- link to main external stylesheet -->
     <link href="../CLUE.css" type="text/css" rel="stylesheet">
   </head>
 
   <body>
-    <!-- HEADER SECTION: Contains site branding and main navigation links -->
     <header class="site-header">
       <div class="container site-header__inner">
+        <!-- logo and title -->
         <div class="brand">
-          <!-- CLUE logo and project title -->
           <img class="brand__logo" src="../LogosAndBranding/CLUE%20-%20black.png" alt="CLUE logo">
           <h1 class="brand__title">Climate Literacy in Undergraduate Education (CLUE)</h1>
         </div>
 
-        <!-- Primary navigation bar linking to modules and units -->
+        <!-- navigation bar -->
         <nav class="site-nav" aria-label="Primary">
           <a href="../CLUE.html">Home</a>
           <a href="../CLUE.html#module">Module Materials</a>
@@ -62,16 +60,16 @@
 
           <!-- EmailJS form for sending access requests to instructor -->
           <form id="cf-form">
-            <!-- Email input field (required institutional email) -->
+            <!-- email input field (required institutional email) -->
             <input type="email" id="cf-email" name="cf-email" placeholder="name@school.edu" required />
 
-            <!-- Hidden honeypot input for spam prevention -->
+            <!-- hidden honeypot input for spam prevention -->
             <input type="text" id="website" name="website" style="display:none" tabindex="-1" autocomplete="off" />
 
-            <!-- Submit button for sending the email -->
+            <!-- submit button for sending the email -->
             <button type="submit">Request Access</button>
 
-            <!-- Status message shown after form submission -->
+            <!-- status message shown after form submission -->
             <p id="cf-status" class="status"></p>
           </form>
         </div>
@@ -80,16 +78,16 @@
         <div id="codeSection" class="hidden">
           <p>Enter your approved access code below to unlock the CLUE materials.</p>
 
-          <!-- Input field for the access code -->
+          <!-- input field for the access code -->
           <input type="password" id="accessInput" placeholder="Enter access code" />
 
-          <!-- Button to validate the entered access code -->
+          <!-- button to validate the entered access code -->
           <button onclick="verifyCode()">Submit</button>
 
-          <!-- Status message after code verification -->
+          <!-- status message after code verification -->
           <p id="status" class="status"></p>
 
-          <!-- Hidden download link revealed upon successful code entry -->
+          <!-- hidden download link revealed upon successful code entry -->
           <div id="downloads" class="downloads hidden">
             <h3>Approved Materials</h3>
             <a href="../LearningOutcomesAndQuestionBank/Question%20Bank.docx" download>Answer Key</a>
@@ -102,7 +100,7 @@
 
       <script type="text/javascript">
         (function(){
-          // Initialize EmailJS with the project’s public key
+          // initialize EmailJS with the project’s public key
           emailjs.init({
             publicKey: "S0gAoFE1GFAdCoe4-",
           });
@@ -118,7 +116,7 @@
         const codeSection = document.getElementById("codeSection");
         const portalTitle = document.getElementById("portalTitle");
 
-        // Show the Request Access section and hide the Access Code section
+        // show the Request Access section and hide the Access Code section
         requestBtn.addEventListener("click", () => {
           if (!requestBtn.disabled) {
             requestSection.classList.remove("hidden");
@@ -127,7 +125,7 @@
           }
         });
 
-        // Show the Access Code section and hide the Request Access section
+        // show the Access Code section and hide the Request Access section
         codeBtn.addEventListener("click", () => {
           codeSection.classList.remove("hidden");
           requestSection.classList.add("hidden");
@@ -140,18 +138,18 @@
         const honeypot = document.getElementById("website");
         const statusEl = document.getElementById("cf-status");
 
-        let openedAt = Date.now(); // Used to prevent rapid spam submissions
+        let openedAt = Date.now(); // used to prevent rapid spam submissions
 
-        // Basic email format validation
+        // basic email format validation
         function looksLikeEmail(s) {
           return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s).trim());
         }
 
-        // Handle form submission event
+        // handle form submission event
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
 
-          // Stop if honeypot is filled (spam) or too fast submission
+          // stop if honeypot is filled (spam) or too fast submission
           if (honeypot.value.trim() !== "") return;
           if (Date.now() - openedAt < 1200) {
             statusEl.textContent = "Please wait a moment and try again.";
@@ -159,7 +157,7 @@
             return;
           }
 
-          // Validate email before sending
+          // validate email before sending
           const email = emailInput.value.trim();
           if (!looksLikeEmail(email)) {
             statusEl.textContent = "Please enter a valid institutional email address.";
@@ -168,22 +166,22 @@
             return;
           }
 
-          // Display sending status
+          // display sending status
           statusEl.textContent = "Sending...";
           statusEl.style.color = '#374151';
 
           try {
-            // Send email using EmailJS service and configured template
+            // send email using EmailJS service and configured template
             const result = await emailjs.send("service_aoelayf", "template_pi8ottj", { email: email });
             console.log("Email sent:", result.text);
 
-            // Update success message
+            // update success message
             statusEl.textContent = "Request sent successfully!";
             statusEl.style.color = "#16a34a";
             form.reset();
             openedAt = Date.now();
           } catch (err) {
-            // Handle any EmailJS errors
+            // handle any EmailJS errors
             console.error("EmailJS error:", err);
             statusEl.textContent = "Error sending request. Please try again later.";
             statusEl.style.color = "#b91c1c";
@@ -191,26 +189,26 @@
         });
 
         // --- ACCESS CODE VALIDATION LOGIC ---
-        const ACCESS_CODE = "MTSU2025"; // Current valid access code
+        const ACCESS_CODE = "MTSU2025"; // current valid access code
         const inputCode = document.getElementById("accessInput");
         const status = document.getElementById("status");
         const downloads = document.getElementById("downloads");
 
-        // Compare entered access code to the stored one
+        // compare entered access code to the stored one
         function verifyCode() {
           const value = inputCode.value.trim();
           if (value === ACCESS_CODE) {
-            // Unlock downloads if the code matches
+            // unlock downloads if the code matches
             downloads.classList.remove("hidden");
             status.textContent = "Access granted. You may now download the materials.";
             status.style.color = "#16a34a";
 
-            // Hide request section and disable further requests
+            // hide request section and disable further requests
             requestSection.classList.add("hidden");
             requestBtn.disabled = true;
             requestBtn.style.opacity = "0.6";
           } else {
-            // Show invalid code message
+            // show invalid code message
             status.textContent = "Invalid access code.";
             status.style.color = "#b91c1c";
           }

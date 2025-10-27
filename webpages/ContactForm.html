@@ -1,28 +1,34 @@
 <!--
-	AUTHORS:     Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
-	FILE:        ContactForm.html
-	DESCRIPTION: This file contains the html code for the ContactForm webpage.
+	AUTHORS: Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
+	FILE:    ContactForm.html
+	PURPOSE: This file contains the html code for the ContactForm webpage.
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- basic page info -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>CLUE: Contact Form</title>
+
+		<!-- EMAILJS SCRIPT: Enables front-end email sending through EmailJS service -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 		
-		<!--External CSS Stylesheet-->
+		<!-- link to main external stylesheet -->
 		<link href="../CLUE.css" type="text/css" rel="stylesheet">
 	</head>
 
 	<body>
 		<header class="site-header">
 			<div class="container site-header__inner">
+				<!-- logo and title -->
 				<div class="brand">
 					<img class="brand__logo" src="../LogosAndBranding/CLUE%20-%20black.png" alt="CLUE logo">
 					<h1 class="brand__title">Climate Literacy in Undergraduate Education (CLUE)</h1>
 				</div>
+
+				<!-- navigation bar -->
 				<nav class="site-nav" aria-label="Primary">
 					<a href="../CLUE.html">Home</a>
 					<a href="../CLUE.html#module">Module Materials</a>
@@ -36,16 +42,21 @@
 			</div>
 		</header>
 
+		<!-- Contact Form Webpage -->
 		<div class="contact-container">
 			<h1>Contact Us</h1>
 
+			<!-- Begin Contact Form -->
 			<form id="contact-form">
+				<!-- Input for user's name-->
 				<label for="name">Name</label>
 				<input type="text" name="name" id="name" required>
 
+				<!-- Input for user's email -->
 				<label for="email">Email</label>
 				<input type="email" name="email" id="email" required>
 
+				<!-- Dropdown for user's status with options listed below -->
 				<label for="status">What best describes you?</label>
 				<select name="status" id="status" required>
 					<option value="">-- Select an option --</option>
@@ -56,35 +67,45 @@
 					<option value="Other">Other</option>
 				</select>
 
+				<!-- Input for user's subject/reason for contact -->
 				<label for="subject">Subject</label>
 				<input type="text" name="subject" id="subject" required>
 
+				<!-- Input for user's message -->
 				<label for="message">Message</label>
 				<textarea name="message" id="message" required></textarea>
 
+				<!-- Submit button to send message with success/error message-->
 				<button type="submit">Send</button>
 				<div id="status-message"></div>
 			</form>
 		</div>
 
+		<!-- JavaScript for using EmailJS and form submissions -->
 		<script type="text/javascript">
+			// Initialize EmailJS from our team's account public key (swap if using own service)
 			(function(){
 				emailjs.init({
-					publicKey: "S0gAoFE1GFAdCoe4-",
+					publicKey: "S0gAoFE1GFAdCoe4-", //public key from EmailJS account
 				});
 			})();
 
+			// Prevent form refresh
 			document.getElementById("contact-form").addEventListener("submit", function(event) {
-				event.preventDefault(); // Prevent form refresh
+				event.preventDefault();
 
+				// Looks for element with id status message to store for display 
 				const statusMsg = document.getElementById("status-message");
 
+				// Sends out form submission data through EmailJS to our team's account by using our team's account service and template (can swap who it is sent to directly on the EmailJS site)
 				emailjs.sendForm("service_aoelayf", "template_o9m8ngd", this)
 					.then(() => {
+						// Displays a green success message if submission is sent
 						statusMsg.style.color = "green";
 						statusMsg.textContent = "✅ Your message has been sent successfully!";
 						this.reset();
 					}, (error) => {
+						// Displays a red message if submission shows error
 						statusMsg.style.color = "red";
 						statusMsg.textContent = "❌ Failed to send. Please try again later.";
 						console.error("EmailJS error:", error);

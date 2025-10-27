@@ -1,20 +1,20 @@
 /*
-	AUTHORS:     Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
-	FILE:        CLUE.css
-	DESCRIPTION: This file contains the CSS code for the CLUE website.
+	AUTHORS: Tyler Kramer, Johnny Duong, Lilly Schmidt, Shan Sindy, Yarely Torres
+	FILE:    CLUE.css
+	PURPOSE: This file contains the CSS code for the CLUE website.
 */
 
 /* -------------------- Root Variables -------------------- */
 /* Define theme colors and base styles for the site */
 :root {
-	--brand-bg: #0f2e3d;          /* Main brand background color */
-	--brand-accent: #2aa198;      /* Primary accent color for highlights/buttons */
-	--brand-accent-2: #268bd2;    /* Secondary accent color (blue tone) */
-	--surface: #ffffff;           /* Background color for cards, headers, footers */
-	--text: #102a43;              /* Main text color */
-	--muted-text: #486581;        /* Muted/secondary text color */
-	--border: #e1e8ed;            /* Light border color */
-	--surface-2: #f7fbfd;         /* Light variant for page background */
+	--brand-bg: #0f2e3d;       /* Main brand background color */
+	--brand-accent: #2aa198;   /* Primary accent color for highlights/buttons */
+	--brand-accent-2: #268bd2; /* Secondary accent color (blue tone) */
+	--surface: #ffffff;        /* Background color for cards, headers, footers */
+	--text: #102a43;           /* Main text color */
+	--muted-text: #486581;     /* Muted/secondary text color */
+	--border: #e1e8ed;         /* Light border color */
+	--surface-2: #f7fbfd;      /* Light variant for page background */
 }
 
 /* -------------------- Base Styles -------------------- */
@@ -370,6 +370,7 @@ hr {
 	padding: 16px;
 }
 
+/* Main header on each unit page */
 .mainBlock header .unit__name {
 	font-size: 28px;
 	color: var(--brand-accent-2);
@@ -377,6 +378,7 @@ hr {
 	text-align: center;
 }
 
+/* Section styling for learning outcomes, downloads, etc. */
 .mainBlock section {
 	background: var(--surface);
 	border: 1px solid var(--border);
@@ -386,11 +388,13 @@ hr {
 	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+/* Section headings */
 .mainBlock section h2 {
 	color: var(--brand-accent);
 	margin-bottom: 12px;
 }
 
+/* Ordered list styling for learning outcomes */
 .mainBlock section ol {
 	padding-left: 20px;
 }
@@ -411,6 +415,7 @@ hr {
 	transition: background 0.2s ease, transform 0.15s ease;
 }
 
+/* Download button hover effect */
 .mainBlock section a button:hover {
 	background: var(--brand-accent);
 	transform: translateY(-2px);
@@ -423,10 +428,12 @@ hr {
 	text-decoration: underline;
 }
 
+/* Space between buttons on Student Materials and similar pages */
 .mainBlock section ul li {
 	margin-bottom: 12px; 
 }
 
+/* Standalone buttons in section paragraphs (like Request Answer Key) */
 .mainBlock section p button {
 	background: var(--brand-accent-2);
 	color: #fff;
@@ -436,7 +443,7 @@ hr {
 	font-size: 16px;
 	cursor: pointer;
 	transition: background 0.2s ease, transform 0.15s ease;
-	margin-bottom: 12px;
+	margin-bottom: 12px; /* adds space below button */
 }
 
 .mainBlock section p button:hover {
@@ -457,12 +464,14 @@ hr {
 	box-sizing: border-box;
 }
 
+/* Heading style */
 .contact-container h1 {
 	text-align: center;
 	color: #333;
 	margin-bottom: 20px;
 }
 
+/* Form container */
 #contact-form {
 	background-color: #fff;
 	padding: 30px 40px;
@@ -474,6 +483,7 @@ hr {
  	flex-direction: column;
 }
 
+/* Label styling */
 #contact-form label {
 	font-weight: 600;
 	color: #444;
@@ -481,6 +491,7 @@ hr {
 	margin-top: 14px;
 }
 
+/* Input, select, textarea styles */
 #contact-form input,
 #contact-form select,
 #contact-form textarea {
@@ -493,6 +504,7 @@ hr {
 	box-sizing: border-box;
 }
 
+/* Focus effects */
 #contact-form input:focus,
 #contact-form select:focus,
 #contact-form textarea:focus {
@@ -501,11 +513,13 @@ hr {
 	outline: none;
 }
 
+/* Textarea sizing */
 #contact-form textarea {
 	min-height: 100px;
 	resize: vertical;
 }
 
+/* Button styling */
 #contact-form button {
 	background-color: #0077b6;
 	color: white;
@@ -527,6 +541,7 @@ hr {
 	transform: translateY(1px);
 }
 
+/* Status message styling */
 #status-message {
 	margin-top: 10px;
 	font-size: 0.95rem;
@@ -544,6 +559,7 @@ hr {
 	margin: 0;
 }
 
+/* Main container */
 .clue-request-page .container {
 	background-color: #ffffff;
 	padding: 2rem;
@@ -554,28 +570,33 @@ hr {
 	margin: 5rem auto;
 }
 
+/* Headings */
 .clue-request-page h1 {
 	margin-top: 0;
 	color: #1e3a8a;
 }
 
+/* Subtitle text (if used) */
 .clue-request-page .subtitle {
 	font-size: 0.95rem;
 	color: #475569;
 	margin-bottom: 1.5rem;
 }
 
+/* Form layout */
 .clue-request-page form {
 	display: flex;
 	flex-direction: column;
 }
 
+/* Form labels */
 .clue-request-page label {
 	text-align: left;
 	margin-bottom: 0.5rem;
 	font-weight: bold;
 }
 
+/* Email input & Password input (for access code) */
 .clue-request-page input[type="email"],
 .clue-request-page input[type="password"] {
 	padding: 0.75rem;
@@ -585,6 +606,7 @@ hr {
 	margin-bottom: 1rem;
 }
 
+/* Buttons (general) */
 .clue-request-page button {
 	background-color: #1e40af;
 	color: white;
@@ -595,16 +617,19 @@ hr {
 	transition: background-color 0.3s;
 }
 
+/* Button hover */
 .clue-request-page button:hover {
 	background-color: #1d4ed8;
 }
 
+/* Status messages */
 .clue-request-page .status {
 	margin-top: 1rem;
 	font-size: 0.95rem;
 	font-weight: 500;
 }
 
+/* Toggle button section */
 .clue-request-page .toggle-buttons {
 	display: flex;
 	justify-content: center;
@@ -631,16 +656,19 @@ hr {
 	cursor: not-allowed;
 }
 
+/* Hidden class utility */
 .clue-request-page .hidden {
 	display: none;
 }
 
+/* Logo image */
 .clue-request-page .logo {
 	width: 250px;
 	margin: auto;
 	margin-bottom: 1rem;
 }
 
+/* Download links section */
 .clue-request-page .downloads a {
 	display: block;
 	margin: 0.5rem 0;
@@ -652,4 +680,3 @@ hr {
 .clue-request-page .downloads a:hover {
 	text-decoration: underline;
 }
-
