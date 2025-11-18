@@ -214,15 +214,15 @@ hr {
 
 /* Badge images setup */
 .badge-list .badge { background-size: cover; background-position: center; }
-.badge-list .badge:nth-child(1) { background-image: url('images/placeholder.png'); }
-.badge-list .badge:nth-child(2) { background-image: url('images/placeholder.png'); }
-.badge-list .badge:nth-child(3) { background-image: url('images/placeholder.png'); }
+.badge-list .badge:nth-child(1) { background-image: url('images/badge1.png'); }
+.badge-list .badge:nth-child(2) { background-image: url('images/badge2.png'); }
+.badge-list .badge:nth-child(3) { background-image: url('images/badge3.png'); }
 
 /* Banner background + overlay gradient */
 .banner {
 	position: relative;
 	height: 340px;
-	background: linear-gradient(0deg, rgba(11,61,89,0.85), rgba(11,61,89,0.85)), url('images/placeholder.png') center/cover no-repeat;
+	background: linear-gradient(0deg, rgba(11,61,89,0.85), rgba(11,61,89,0.85)), url('images/background.png') center/cover no-repeat;
 	background-position: center, center 10%;
 	border-top: 2px solid rgba(255,255,255,0.3);
 }
