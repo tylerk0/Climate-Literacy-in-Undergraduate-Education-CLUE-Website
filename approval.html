@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    (function(){
+      // initialize EmailJS with the project’s public key
+      emailjs.init({
+        publicKey: "8GYMYf_zO1AbC-x7L",
+      });
+    })();
+  </script>
+
+<script>
+	const params = new URLSearchParams(window.location.search);
+	const requesterEmail = params.get("email");
+
+	if(requesterEmail) {
+		// send approval email with EmailJS, using the extracted email
+		emailjs.send("service_ixz6wxq", "template_mvd3e1e", {
+			email: requesterEmail
+		}).then(() => {
+			document.body.innerHTML = "<h1>Approval email sent!</h1>";
+		});
+	}
+</script>

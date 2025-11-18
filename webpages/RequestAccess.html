@@ -46,12 +46,6 @@
         <img src="../LogosAndBranding/CLUE%20-%20white.png" alt="CLUE Logo" class="logo" />
         <h1 id="portalTitle">Request Access</h1>
 
-        <!-- TOGGLE BUTTONS: Switch between request form and access code input -->
-        <div class="toggle-buttons">
-          <button id="showRequest">Request Access</button>
-          <button id="showCode">Enter Access Code</button>
-        </div>
-
         <!-- REQUEST ACCESS SECTION -->
         <div id="requestSection">
           <p>
@@ -73,26 +67,6 @@
             <p id="cf-status" class="status"></p>
           </form>
         </div>
-
-        <!-- ENTER ACCESS CODE SECTION -->
-        <div id="codeSection" class="hidden">
-          <p>Enter your approved access code below to unlock the CLUE materials.</p>
-
-          <!-- input field for the access code -->
-          <input type="password" id="accessInput" placeholder="Enter access code" />
-
-          <!-- button to validate the entered access code -->
-          <button onclick="verifyCode()">Submit</button>
-
-          <!-- status message after code verification -->
-          <p id="status" class="status"></p>
-
-          <!-- hidden download link revealed upon successful code entry -->
-          <div id="downloads" class="downloads hidden">
-            <h3>Approved Materials</h3>
-            <a href="../LearningOutcomesAndQuestionBank/Question%20Bank.docx" download>Answer Key</a>
-          </div>
-        </div>
       </div>
 
       <!-- EMAILJS SCRIPT: Enables front-end email sending through EmailJS service -->
@@ -102,36 +76,13 @@
         (function(){
           // initialize EmailJS with the project’s public key
           emailjs.init({
-            publicKey: "S0gAoFE1GFAdCoe4-",
+            publicKey: "8GYMYf_zO1AbC-x7L",
           });
         })();
       </script>
 
       <!-- MAIN JAVASCRIPT LOGIC: Handles toggling, form submission, and authentication -->
       <script>
-        // --- TOGGLE BETWEEN REQUEST AND CODE SECTIONS ---
-        const requestBtn = document.getElementById("showRequest");
-        const codeBtn = document.getElementById("showCode");
-        const requestSection = document.getElementById("requestSection");
-        const codeSection = document.getElementById("codeSection");
-        const portalTitle = document.getElementById("portalTitle");
-
-        // show the Request Access section and hide the Access Code section
-        requestBtn.addEventListener("click", () => {
-          if (!requestBtn.disabled) {
-            requestSection.classList.remove("hidden");
-            codeSection.classList.add("hidden");
-            portalTitle.textContent = "Request Access";
-          }
-        });
-
-        // show the Access Code section and hide the Request Access section
-        codeBtn.addEventListener("click", () => {
-          codeSection.classList.remove("hidden");
-          requestSection.classList.add("hidden");
-          portalTitle.textContent = "Enter Access Code";
-        });
-
         // --- EMAILJS LOGIC FOR REQUEST FORM ---
         const form = document.getElementById("cf-form");
         const emailInput = document.getElementById("cf-email");
@@ -172,7 +123,7 @@
 
           try {
             // send email using EmailJS service and configured template
-            const result = await emailjs.send("service_aoelayf", "template_pi8ottj", { email: email });
+            const result = await emailjs.send("service_ixz6wxq", "template_j49syug", { email: email });
             console.log("Email sent:", result.text);
 
             // update success message
@@ -187,32 +138,6 @@
             statusEl.style.color = "#b91c1c";
           }
         });
-
-        // --- ACCESS CODE VALIDATION LOGIC ---
-        const ACCESS_CODE = "MTSU2025"; // current valid access code
-        const inputCode = document.getElementById("accessInput");
-        const status = document.getElementById("status");
-        const downloads = document.getElementById("downloads");
-
-        // compare entered access code to the stored one
-        function verifyCode() {
-          const value = inputCode.value.trim();
-          if (value === ACCESS_CODE) {
-            // unlock downloads if the code matches
-            downloads.classList.remove("hidden");
-            status.textContent = "Access granted. You may now download the materials.";
-            status.style.color = "#16a34a";
-
-            // hide request section and disable further requests
-            requestSection.classList.add("hidden");
-            requestBtn.disabled = true;
-            requestBtn.style.opacity = "0.6";
-          } else {
-            // show invalid code message
-            status.textContent = "Invalid access code.";
-            status.style.color = "#b91c1c";
-          }
-        }
       </script>
     </div>
   </body>
